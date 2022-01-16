@@ -1,5 +1,5 @@
 const data = {
-  cars: [
+  products: [
     {
       title: 'Model S',
       description: 'Order Online for Touchless Deliver',

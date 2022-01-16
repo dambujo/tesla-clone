@@ -11,17 +11,17 @@ function Section({
 }) {
   return (
     <>
-      {data.cars.map((car, i) => (
-        <Wrap key={car.slug} bgImage={car.backgroundImg}>
+      {data.products.map((product, i) => (
+        <Wrap key={product.slug} bgImage={product.backgroundImg}>
           <ItemText>
-            <h1>{car.title}</h1>
-            <p>{car.description}</p>
+            <h1>{product.title}</h1>
+            <p>{product.description}</p>
           </ItemText>
           <Button>
             <ButtonGroup>
-              <LeftButton>{car.leftBtnText}</LeftButton>
-              {car.rightBtnText && (
-                <RightButton>{car.rightBtnText}</RightButton>
+              <LeftButton>{product.leftBtnText}</LeftButton>
+              {product.rightBtnText && (
+                <RightButton>{product.rightBtnText}</RightButton>
               )}
             </ButtonGroup>
             <DownArrow src="/images/down-arrow.svg" />
@@ -40,7 +40,6 @@ const Wrap = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  //background-image: url('/images/model-s.jpg');
   flex-direction: column;
   display: flex;
   justify-content: space-between; // vertical
