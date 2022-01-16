@@ -1,27 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
+import data from '../utils/data';
 
 function Section({
-  title,
+  //title,
   description,
   backgroundImg,
   leftBtnText,
   rightBtnText,
 }) {
   return (
-    <Wrap bgImage={backgroundImg}>
-      <ItemText>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </ItemText>
-      <Button>
-        <ButtonGroup>
-          <LeftButton>{leftBtnText}</LeftButton>
-          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
-        </ButtonGroup>
-        <DownArrow src="/images/down-arrow.svg" />
-      </Button>
-    </Wrap>
+    <>
+      {data.cars.map((car, i) => (
+        <Wrap key={car.slug} bgImage={car.backgroundImg}>
+          <ItemText>
+            <h1>{car.title}</h1>
+            <p>{car.description}</p>
+          </ItemText>
+          <Button>
+            <ButtonGroup>
+              <LeftButton>{car.leftBtnText}</LeftButton>
+              {car.rightBtnText && (
+                <RightButton>{car.rightBtnText}</RightButton>
+              )}
+            </ButtonGroup>
+            <DownArrow src="/images/down-arrow.svg" />
+          </Button>
+        </Wrap>
+      ))}
+    </>
   );
 }
 
@@ -33,12 +40,12 @@ const Wrap = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('/images/model-s.jpg');
+  //background-image: url('/images/model-s.jpg');
   flex-direction: column;
   display: flex;
   justify-content: space-between; // vertical
   align-items: center; // horizotal
-  background-image: ${(props) => `url("/images/${props.bgImage}")`};
+  background-image: ${(props) => `url(${props.bgImage})`};
 `;
 
 const ItemText = styled.div`
