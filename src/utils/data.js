@@ -9,7 +9,7 @@ const data = {
       rightBtnText: 'Existing Inventory',
     },
     {
-      title: 'Model y',
+      title: 'Model Y',
       description: 'Order Online for Touchless Deliver',
       backgroundImg: '/images/model-y.jpg',
       slug: 'model-y',
@@ -25,7 +25,7 @@ const data = {
       rightBtnText: 'Existing Inventory',
     },
     {
-      title: 'Model x',
+      title: 'Model X',
       description: 'Order Online for Touchless Deliver',
       backgroundImg: '/images/model-x.jpg',
       slug: 'model-x',
